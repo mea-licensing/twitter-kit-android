@@ -26,6 +26,7 @@ subprojects { Project subproject ->
         }
         dependencies {
             classpath dependency.androidGradlePlugin
+            classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.0.1"
         }
     }
 

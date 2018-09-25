@@ -63,7 +63,8 @@ public class TweetUi {
         guestSessionProvider = twitterCore.getGuestSessionProvider();
         tweetRepository = new TweetRepository(new Handler(Looper.getMainLooper()),
                 twitterCore.getSessionManager());
-        imageLoader = Picasso.with(Twitter.getInstance().getContext(getIdentifier()));
+
+        imageLoader = Picasso.get();
     }
 
     public String getIdentifier() {

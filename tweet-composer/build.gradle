@@ -19,7 +19,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
-    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         versionCode 1
@@ -33,8 +32,6 @@ android {
             buildConfigField "String", "ARTIFACT_ID", "\"${pom_artifact_id}\""
             buildConfigField "String", "BUILD_NUMBER", "\"${buildNumber}\""
             buildConfigField "long", "BUILD_TIME", "${System.currentTimeMillis()}L"
-
-            testCoverageEnabled enableTestCodeCoverage
         }
 
         release {
@@ -45,9 +42,6 @@ android {
         }
     }
 
-    lintOptions {
-        warningsAsErrors true
-    }
 
     compileOptions {
         sourceCompatibility rootProject.sourceCompatibilityVersion
@@ -77,3 +71,5 @@ dependencies {
         exclude group: 'org.apache.httpcomponents', module: 'httpclient'
     }
 }
+
+apply from: 'deploy.gradle'

@@ -429,7 +429,9 @@ public class TweetMediaView extends ViewGroup implements View.OnClickListener {
         }
 
         @Override
-        public void onError() { /* intentionally blank */ }
+        public void onError(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     static class Size {
